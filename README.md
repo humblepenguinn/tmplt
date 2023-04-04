@@ -7,7 +7,7 @@
 A User Friendly CLI Tool For Creating New Projects With Templates
 
 
-<img alt="Demo" src="https://vhs.charm.sh/vhs-68JGlaLkwlzBKpo3wm0UEo.gif" width="600" />
+<img alt="Demo" src="https://vhs.charm.sh/vhs-68JGlaLkwlzBKpo3wm0UEo.gif" width="800" />
 
 ## About
 
