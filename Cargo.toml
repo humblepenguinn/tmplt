@@ -1,6 +1,6 @@
 [package]
 name = "tmplt"
-version = "0.1.0"
+version = "0.1.1"
 rust-version = "1.64.0"
 description = "tmplt is a command-line interface tool that allows you to quickly and easily set up project templates for various programming languages and frameworks"
 edition = "2021"
