@@ -283,7 +283,9 @@ files:
       file contents
 
 # Post-setup command to run after setup is complete
-post_setup_command: post_setup_command
+post_setup_commands:
+  - command_1
+  - command_2
 
 variables:
   - name: my_variable_name
