@@ -1,19 +1,61 @@
 # Usage
-Before reading the usage make sure you understand what `templates` (See [templates](https://github.com/humblepenguinn/tmplt#templates)) are in tmplt
+Before reading the usage make sure you understand what `templates` (See [templates](https://github.com/humblepenguinn/tmplt#templates)) are in `tmplt`
 
 ## Creating new Template
-To use `tmplt`, users need to first create or [import](#import-a-template) a template. Running `tmplt init <template_name>` will generate a new template with the provided name, which you can then find in the directory `home_dir/.tmplt/templates`. You can modify this template using a text editor.
+To use `tmplt`, users need to first create or [import](#import-a-template) a template. Running `tmplt init <template_name>` will generate a new template with the provided name, which you can then find in the tools config directory `HOME_DIR/.tmplt/templates` (note that `HOME_DIR` refers to the operating systems home directory). You can now modify this template using a text editor.
 
-Lets create a new `flask app` template using tmplt
+Lets create a new `flask app` template using `tmplt`
 
 ```sh
 $ tmplt init flask-app
 ```
 
-This will create a new template named "flask-app" in the `home_dir/.tmplt/templates` directory.
+This will create a new template named "flask-app" in the `HOME_DIR/.tmplt/templates` directory.
 
-Modify the contents of the template
+Open the template with a text editor. This step is specific to your operating system and text editor of choice
 
+When you open the template file using a text editor you should see the following contents:
+```yaml
+# Go to the GitHub repo https://github.com/humblepenguinn/tmplt for more information
+
+# Template information
+name: flask-app
+description: Description of the template
+
+# Commands to run during setup
+setup_commands:
+  - command_1
+  - command_2
+
+# Dependency information
+dependencies:
+  - name: dependency_1
+    install_command: install_command_1
+
+  - name: dependency_2
+    install_command: install_command_2
+
+# Files to generate
+files:
+  - name: file_name_1
+    content: |
+      file contents
+  - name: file_name_2
+    content: |
+      file contents
+
+# Post-setup command to run after setup is complete
+post_setup_commands:
+  - command_1
+  - command_2
+
+variables:
+  - name: my_variable_name
+    description: description of the variable
+    default: the default value of the variable
+```
+
+Modify the contents of the template:
 ```yaml
 # Flask Project Template
 
@@ -50,8 +92,10 @@ variables:
 
 ```
 
+We now have successfully created our first template!
+
 ## Create a new project
-To create a new project using a template, users can run the `tmplt create <proj_name> <template_to_use>` command. This command will create a new directory for your project with the `<proj_name>`, generate all the files, download all the dependencies and run all the `post` and `setup` commands specified in the template.
+To create a new project using a template, users can run the `tmplt create <proj_name> <template_to_use>` command. This command will create a new directory with the name specified in the `<proj_name>` argument, generate all the files, download all the dependencies and run all the `post` and `setup` commands specified in the template.
 
 If the template has any `variables`, `tmplt` will prompt you to provide a value for each variable. You can choose to use the default value or provide a new value.
 
@@ -60,7 +104,7 @@ Let's use our flask template to create a new flask project:
 $ tmplt create myflaskapp flask-app
 ```
 
-This will create a new directory with the name `myflaskapp`, based on the `flask-app` template you created earlier. The command will prompt you to provide a value for the `app_name` variable.
+This will create a new directory with the name `myflaskapp`, based on the `flask-app` template we created earlier. The command will prompt you to provide a value for the `app_name` variable.
 
 ## Import a Template
 
@@ -71,10 +115,10 @@ The `tmplt import <url> <template_name_to_save_as>` command is used to import a 
 You can then use the imported template to create a new project as showed in the [Create a new project section](#create-a-new-project)
 
 ## List Available Templates
-This command is used to list all the available templates. Running tmplt list will display a list of all the templates that you can use to create projects.
+This command is used to list all the available templates. Running `tmplt list` will display a list of all the templates that you can use to create projects.
 
 ```sh
 tmplt list
 ```
 
-That's it! With these simple commands, you can use tmplt to create and manage projects based on templates.
+That's it! With these simple commands, you can use `tmplt` to create and manage projects based on templates.
